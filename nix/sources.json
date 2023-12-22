@@ -1,0 +1,14 @@
+{
+    "ek": {
+        "branch": "master",
+        "description": "Personal Nix overlay exposing: NixOS modules, home-manager modules, package sets, custom nixpkgs utilities.",
+        "homepage": null,
+        "owner": "ernestkz",
+        "repo": "Overlay",
+        "rev": "1064ce78fa38ad80b23e1a6cff860095d6d35c88",
+        "sha256": "1ynqm60s7l2n4jvh0jal1b596mx8cfnxl2h1dwfyqv41230pjjpy",
+        "type": "tarball",
+        "url": "https://github.com/ernestkz/Overlay/archive/1064ce78fa38ad80b23e1a6cff860095d6d35c88.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    }
+}

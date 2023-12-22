@@ -1,0 +1,86 @@
+cabal-version:      3.4
+name:               ek-xmonad
+version:            0.1.0.0
+author:             ernestkz
+maintainer:         ernestkuznecovs@gmail.com
+build-type:         Simple
+
+common warnings
+    ghc-options:
+     -Weverything
+     -Wno-missing-exported-signatures
+     -Wno-missing-import-lists
+     -Wno-missed-specialisations
+     -Wno-all-missed-specialisations
+     -Wno-unsafe
+     -Wno-safe
+     -Wno-missing-safe-haskell-mode
+     -Wno-missing-kind-signatures
+     -Wno-missing-local-signatures
+     -Wno-monomorphism-restriction
+
+     -Wno-implicit-prelude
+     -Wno-missing-export-lists
+
+     -Werror
+
+common effects
+    ghc-options: -fplugin=Effectful.Plugin
+    build-depends: effectful
+                 , effectful-core
+                 , effectful-th
+                 , effectful-plugin
+
+common language     
+    default-language: GHC2021
+    default-extensions: TemplateHaskell
+                      , MonoLocalBinds
+                      , DataKinds
+                      , DerivingStrategies
+    
+                      , StandaloneKindSignatures
+                      , TypeFamilies
+                      , TypeOperators
+                      , GADTs
+                      , ScopedTypeVariables
+
+                      , LambdaCase
+                      
+library
+    import: warnings
+          , language
+          -- , effects
+
+    exposed-modules: System
+                   , System.Bindings
+                   , System.Colour
+                   , System.Hooks
+                   , System.XMobar
+                   , System.XMonad
+
+                   , KeyCodes
+                   , Colour.Zenburn
+
+    build-depends: base
+    
+                 , containers
+                 
+                 , xmonad
+                 , xmonad-contrib
+                 , xmobar
+                 , X11
+                 
+    hs-source-dirs: src
+
+
+executable ek-xmonad-exe
+    import: warnings
+          , language
+    
+    ghc-options: -threaded
+     
+    main-is: Main.hs
+    build-depends: base
+                 , ek-xmonad 
+    hs-source-dirs: app
+    
